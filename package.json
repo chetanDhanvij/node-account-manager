@@ -5,6 +5,7 @@
   "main": "src/server.js",
   "type": "module",
   "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
     "start": "nodemon src/server.js"
   },
   "author": "",
@@ -15,7 +16,9 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "jest": "^27.4.7",
     "nodemon": "^2.0.15",
-    "prettier": "2.5.1"
+    "prettier": "2.5.1",
+    "supertest": "^6.2.2"
   }
 }
