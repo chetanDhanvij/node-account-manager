@@ -2,7 +2,7 @@ import { iso4217 } from "../data/iso4217.js"
 
 
 export const validateAccountNumber = (accountNumber) => {
-    return accountNumber.length === 11;
+    return validateAccountNumberMod11(accountNumber);
 }
 
 export const validateAccountNumberMod11 = (accountNumber) => {

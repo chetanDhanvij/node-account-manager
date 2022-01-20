@@ -7,7 +7,7 @@ describe("POST /accounts", () => {
     test("should respond with a 200 status code", async () => {
       const response = await request(app).post("/accounts").send({
         accountName: "chetan Dhanvij",
-        accountNumber: "45645645645",
+        accountNumber: "56039416749",
         accountType: "SAVING",
         currency: "NOK"
       })
@@ -17,7 +17,7 @@ describe("POST /accounts", () => {
     test("should specify json in the content type header", async () => {
       const response = await request(app).post("/accounts").send({
         accountName: "chetan Dhanvij",
-        accountNumber: "45645645645",
+        accountNumber: "56039416749",
         accountType: "SAVING",
         currency: "NOK"
       })
