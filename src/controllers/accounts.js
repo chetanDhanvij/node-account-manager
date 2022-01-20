@@ -43,9 +43,10 @@ export const createAccount = (req, res, next) => {
     }
 
 
-    accounts.push({...account, id: uuid()});
-    console.log(`Account [${account.accountName}] added to the database.`);
-    res.send(accounts);
+    const newAccount = {...account, id: uuid()}
+    accounts.push(newAccount);
+    console.log(`Account [${newAccount.accountName}] added to the database.`);
+    res.send(newAccount);
 };
 
 export const deleteAccount = (req, res) => {
@@ -64,6 +65,6 @@ export const updateAccount =  (req,res, next) => {
 
     account.accountName = req.body.accountName;
     console.log(`accountName has been updated to ${req.body.accountName}.`);
-    res.send(accounts);
+    res.send(account);
 
 };

@@ -31,13 +31,12 @@ describe("POST /accounts", () => {
         accountType: "SAVING",
         currency: "NOK"
       })
-      console.log()
-      expect(response.body.filter(d => !d.id).length).toBe(0)
+      expect(response.body.id).not.toBeNull()
     })
   })
 
   describe("GET /accounts", () => {
-    test("response has id", async () => {
+    test("response has ids", async () => {
       const response = await request(app).get("/accounts").send()
       console.log()
       expect(response.body.filter(d => !d.id).length).toBe(0)
@@ -54,7 +53,7 @@ describe("POST /accounts", () => {
       const responsePatch = await request(app).patch("/accounts/" + account.id).send({
         accountName: UPDATED_NAME,
       })
-      expect(responsePatch.body.find(d => d.id == account.id).accountName).toBe(UPDATED_NAME)
+      expect(responsePatch.body.accountName).toBe(UPDATED_NAME)
     })
   })
 
